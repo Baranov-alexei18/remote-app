@@ -35,16 +35,16 @@ new ModuleFederationPlugin({
       exposes: {
         './PageRemote': './src/components/PageRemote',
       },
-      // shared: {
-      //   react: {
-      //     singleton: true,
-      //     requiredVersion: '^18.2.0',
-      //   },
-      //   'react-dom': {
-      //     singleton: true,
-      //     requiredVersion: '^18.2.0',
-      //   },
-      // },
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: '^18.2.0',
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: '^18.2.0',
+        },
+      },
     }),
 
     new HtmlWebpackPlugin({
