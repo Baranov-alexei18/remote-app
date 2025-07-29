@@ -23,9 +23,9 @@ const App = () => {
         Переключить способ загрузки Menu
       </button>
 
-      <Suspense fallback={<div>Загрузка меню...</div>}>
+      {/* <Suspense fallback={<div>Загрузка меню...</div>}>
         {useLazy ? LazyMenu : 'попробуем загрузить еще раз'}
-      </Suspense>
+      </Suspense> */}
 
       <Suspense fallback={<div>Загрузка меню...</div>}>
         <LazyMenu />
