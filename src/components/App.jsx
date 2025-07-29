@@ -26,7 +26,7 @@ const App = () => {
       </button>
 
       <Suspense fallback={<div>Загрузка меню...</div>}>
-        {useLazy ? <LazyMenu /> : MenuComponent ? <MenuComponent /> : null}
+        {useLazy ? <LazyMenu /> : MenuComponent ? MenuComponent : null}
       </Suspense>
 
       <RemotePage />
