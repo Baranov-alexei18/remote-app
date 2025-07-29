@@ -34,19 +34,17 @@ new ModuleFederationPlugin({
       },
       exposes: {
         './RemotePage': './src/components/RemotePage',
-  },
-        shared: {
-    react: {
-      singleton: true,
-      eager: false,
-      requiredVersion: '^18.2.0', // версия из твоего package.json
-    },
-    'react-dom': {
-      singleton: true,
-      eager: false,
-      requiredVersion: '^18.2.0',
-    },
-  },
+      },
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: '^18.2.0',
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: '^18.2.0',
+        },
+      },
     }),
 
     new HtmlWebpackPlugin({
