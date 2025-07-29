@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
-    publicPath: 'auto',
+    publicPath: 'https://remote-app-roan.vercel.app/',
     clean: true,
   },
   resolve: {
@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: [
 new ModuleFederationPlugin({
-      name: "remoteApp",
+      name: "remote_app",
       filename: "remoteEntry.js",
       remotes: {
         host_app: "host_app@https://host-app-xois.vercel.app/remoteEntry.js",
@@ -44,7 +44,7 @@ new ModuleFederationPlugin({
   devServer: {
     static: './dist',
     hot: true,
-    port: 3000,
+    port: 3001,
     open: true,
   },
 };

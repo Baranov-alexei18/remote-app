@@ -1,15 +1,25 @@
-import React, { Suspense } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import RemotePage from "./PageRemote";
+import { loadRemoteComponent } from "../loadRemoteComponent";
 
-const Menu = React.lazy(() => import("host_app/Menu"));
+const App = () => {
+  const [MenuComponent, setMenuComponent] = useState(null);
 
-const App = () => (
+  useEffect(() => {
+    loadRemoteComponent({ remoteName: "host_app", moduleName: "./Menu" })
+      .then((mod) => setMenuComponent(() => mod.default))
+      .catch((err) => console.error("Ошибка загрузки Menu:", err));
+  }, []);
+
+  
+  return (
     <>
-         <Suspense fallback={<div>Загрузка меню...</div>}>
-      <Menu />
-    </Suspense>
-    <RemotePage />
-  </>
-);
+      <Suspense fallback={<div>Загрузка меню...</div>}>
+        {MenuComponent ? <MenuComponent /> : null}
+      </Suspense>
+      <RemotePage />
+    </>
+  );
+};
 
 export default App;
