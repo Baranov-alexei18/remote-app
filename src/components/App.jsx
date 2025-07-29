@@ -4,6 +4,9 @@ import { loadRemoteComponent } from "../loadRemoteComponent";
 
 const LazyMenu = React.lazy(() => import("host_app/Menu"));
 
+
+console.log(LazyMenu);
+
 const App = () => {
   const [MenuComponent, setMenuComponent] = useState<React.ComponentType | null>(null);
   const [useLazy, setUseLazy] = useState(true); // Флаг для переключения способа
@@ -11,7 +14,7 @@ const App = () => {
   useEffect(() => {
     if (!useLazy) {
       loadRemoteComponent({ remoteName: "host_app", moduleName: "./Menu" })
-        .then((mod) => setMenuComponent(() => mod.default))
+        .then((mod) => setMenuComponent(() => mod))
         .catch((err) => console.error("Ошибка загрузки Menu:", err));
     }
   }, [useLazy]);
