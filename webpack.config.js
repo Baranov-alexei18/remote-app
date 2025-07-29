@@ -27,19 +27,17 @@ module.exports = {
   },
   plugins: [
 new ModuleFederationPlugin({
-      name: "remote_app",
-      filename: "remoteEntry.js",
-      host_app: `promise new Promise(resolve => {
-        resolve(window.host_app);
-      })`,
-      exposes: {
-        './PageRemote': './src/components/PageRemote',
-      },
-    }),
-
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
+  name: "remote_app",
+  filename: "remoteEntry.js",
+  remotes: {
+    host_app: `promise new Promise(resolve => {
+      resolve(window.host_app);
+    })`
+  },
+  exposes: {
+    './PageRemote': './src/components/PageRemote',
+  },
+}),
   ],
   devServer: {
     static: './dist',
