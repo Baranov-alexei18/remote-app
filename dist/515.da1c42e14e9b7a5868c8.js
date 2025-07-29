@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkremote_app_module_federation=self.webpackChunkremote_app_module_federation||[]).push([[515],{515:(e,t,n)=>{n.r(t),n.d(t,{default:()=>l});var r=n(527),a=n.n(r);const l=function(){return a().createElement(a().Fragment,null,a().createElement("div",null,"Это remote-приложение"))}}}]);
