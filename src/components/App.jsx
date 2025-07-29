@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import RemotePage from "./RemotePage";
+import RemotePage from "./PageRemote";
 
 const Menu = React.lazy(() => import("host_app/Menu"));
 
