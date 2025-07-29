@@ -8,16 +8,16 @@ const LazyMenu = React.lazy(() => import("host_app/Menu"));
 console.log(LazyMenu);
 
 const App = () => {
-  const [MenuComponent, setMenuComponent] = useState<React.ComponentType | null>(null);
-  const [useLazy, setUseLazy] = useState(true); // Флаг для переключения способа
+  // const [MenuComponent, setMenuComponent] = useState<React.ComponentType | null>(null);
+  // const [useLazy, setUseLazy] = useState(true); // Флаг для переключения способа
 
-  useEffect(() => {
-    if (!useLazy) {
-      loadRemoteComponent({ remoteName: "host_app", moduleName: "./Menu" })
-        .then((mod) => setMenuComponent(() => mod))
-        .catch((err) => console.error("Ошибка загрузки Menu:", err));
-    }
-  }, [useLazy]);
+  // useEffect(() => {
+  //   if (!useLazy) {
+  //     loadRemoteComponent({ remoteName: "host_app", moduleName: "./Menu" })
+  //       .then((mod) => setMenuComponent(() => mod))
+  //       .catch((err) => console.error("Ошибка загрузки Menu:", err));
+  //   }
+  // }, [useLazy]);
 
   return (
     <>
@@ -26,7 +26,7 @@ const App = () => {
       </button>
 
       <Suspense fallback={<div>Загрузка меню...</div>}>
-        {useLazy ? LazyMenu : MenuComponent ? MenuComponent : null}
+        {LazyMenu}
       </Suspense>
 
       <RemotePage />
