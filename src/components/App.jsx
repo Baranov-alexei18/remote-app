@@ -5,8 +5,6 @@ import { loadRemoteComponent } from "../loadRemoteComponent";
 const LazyMenu = React.lazy(() => import("host_app/Menu"));
 
 
-console.log(LazyMenu);
-
 const App = () => {
   // const [MenuComponent, setMenuComponent] = useState<React.ComponentType | null>(null);
   // const [useLazy, setUseLazy] = useState(true); // Флаг для переключения способа
@@ -29,6 +27,9 @@ const App = () => {
         {LazyMenu}
       </Suspense>
 
+      <Suspense fallback={<div>Загрузка меню...</div>}>
+        <LazyMenu />
+      </Suspense>
       <RemotePage />
     </>
   );
