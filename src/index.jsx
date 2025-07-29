@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import RemotePage from "./components/RemotePage";
+import PageRemote from "./components/PageRemote";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<RemotePage />);
+root.render(<PageRemote />);

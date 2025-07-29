@@ -3,7 +3,7 @@ declare module 'remote_app/RemotePage' {
   export default RemotePage;
 }
 
-declare module 'hostApp/Menu' {
+declare module 'host_app/Menu' {
   const Menu: React.ComponentType;
   export default Menu;
 }
