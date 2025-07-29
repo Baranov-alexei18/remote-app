@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Suspense } from "react";
 import RemotePage from "./PageRemote";
 import { loadRemoteComponent } from "../loadRemoteComponent";
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes,  Route } from 'react-router-dom';
 
 import ErrorBoundary from "./ErrorBoundary";
 
@@ -25,7 +25,6 @@ const App = () => {
         Переключить способ загрузки Menu
       </button>
 
-      
       <ErrorBoundary>
         <Suspense fallback={<div>Загрузка меню...</div>}>
           {useLazy ? LazyMenu : 'попробуем загрузить еще раз'}
@@ -37,6 +36,10 @@ const App = () => {
           <LazyMenu />
         </Suspense>
       </ErrorBoundary>
+
+        <Routes>
+          <Route path="/" element={<RemotePage />} />
+        </Routes>
       <RemotePage />
     </BrowserRouter>
   );
