@@ -1,12 +1,7 @@
-import React, { Suspense } from "react";
-
-const Menu = React.lazy(() => import("host_app/Menu"));
+import React from "react";
 
 const PageRemote = () => (
   <>
-    <Suspense fallback={<div>Загрузка меню...</div>}>
-      <Menu />
-    </Suspense>
     <div>Это remote-приложение</div>
   </>
 );
