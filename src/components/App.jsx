@@ -2,8 +2,10 @@ import React, { useEffect, useState, Suspense } from "react";
 import RemotePage from "./PageRemote";
 import { loadRemoteComponent } from "../loadRemoteComponent";
 import { BrowserRouter } from 'react-router-dom';
-const LazyMenu = React.lazy(() => import("host_app/Menu"));
 
+import ErrorBoundary from "./ErrorBoundary";
+
+const LazyMenu = React.lazy(() => import("host_app/Menu"));
 
 const App = () => {
   // const [MenuComponent, setMenuComponent] = useState<React.ComponentType | null>(null);
@@ -27,9 +29,11 @@ const App = () => {
         {useLazy ? LazyMenu : 'попробуем загрузить еще раз'}
       </Suspense> */}
 
-      <Suspense fallback={<div>Загрузка меню...</div>}>
-        <LazyMenu />
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={<div>Загрузка меню...</div>}>
+          <LazyMenu />
+        </Suspense>
+      </ErrorBoundary>
       <RemotePage />
     </BrowserRouter>
   );
