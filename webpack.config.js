@@ -33,7 +33,7 @@ new ModuleFederationPlugin({
         hostApp: "host_app@https://host-app-xois.vercel.app/remoteEntry.js",
       },
       exposes: {
-        "./RemotePage": "./src/components/RemotePage",
+        './RemotePage': './src/components/RemotePage',
   },
         shared: {
     react: {
