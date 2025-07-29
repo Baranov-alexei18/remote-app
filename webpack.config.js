@@ -32,9 +32,9 @@ new ModuleFederationPlugin({
       remotes: {
         hostApp: "host_app@https://host-app-xois.vercel.app/remoteEntry.js",
       },
-      exposes: {
-        './RemotePage': './src/components/RemotePage',
-      },
+      // exposes: {
+      //   './RemotePage': './src/components/RemotePage',
+      // },
       shared: {
         react: {
           singleton: true,
