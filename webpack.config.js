@@ -38,8 +38,12 @@ new ModuleFederationPlugin({
     './PageRemote': './src/components/PageRemote',
   },
 }),
+        new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
   ],
   devServer: {
+    historyApiFallback: true,
     static: './dist',
     hot: true,
     port: 3001,

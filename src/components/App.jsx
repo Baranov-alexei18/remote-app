@@ -41,7 +41,6 @@ const App = () => {
           <Route path="/" element={<RemotePage />} />
           <Route path="/work" element={<div> WORK! </div>} />
         </Routes>
-      <RemotePage />
     </BrowserRouter>
   );
 };
