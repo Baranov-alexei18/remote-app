@@ -30,9 +30,7 @@ new ModuleFederationPlugin({
   name: "remote_app",
   filename: "remoteEntry.js",
   remotes: {
-    host_app: `promise new Promise(resolve => {
-      resolve(window.host_app);
-    })`
+    host_app: "host_app@https://host-app-xois.vercel.app/remoteEntry.js"
   },
   exposes: {
     './PageRemote': './src/components/PageRemote',
