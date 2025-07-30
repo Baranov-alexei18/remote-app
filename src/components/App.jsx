@@ -2,7 +2,7 @@ import React, { useEffect, useState, Suspense } from "react";
 import RemotePage from "./PageRemote";
 import { loadRemoteComponent } from "../loadRemoteComponent";
 import { BrowserRouter, Routes,  Route } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 import ErrorBoundary from "./ErrorBoundary";
 
 const LazyMenu = React.lazy(() => import("host_app/Menu"));
