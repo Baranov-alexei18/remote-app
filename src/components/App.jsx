@@ -20,7 +20,7 @@ const App = () => {
   // }, [useLazy]);
 
   return (
-    <BrowserRouter>
+    <>
       <button onClick={() => setUseLazy((prev) => !prev)}>
         Переключить способ загрузки Menu
 
@@ -44,7 +44,7 @@ const App = () => {
           <Route path="/work" element={<div> WORK! </div>} />
           <Route path="/remote" element={<div> 'Эта страница уже в remote находится - хоть и имеет другой домен! </div>} />
         </Routes>
-    </BrowserRouter>
+    </>
   );
 };
 
