@@ -27,6 +27,8 @@ const App = () => {
         <Link to='/work'> Check</Link>
       </button>
 
+      <div style={{display: 'flex'}}>
+
       <ErrorBoundary>
         <Suspense fallback={<div>Загрузка меню...</div>}>
           {useLazy ? LazyMenu : 'попробуем загрузить еще раз'}
@@ -44,6 +46,7 @@ const App = () => {
           <Route path="/work" element={<div> WORK! </div>} />
           <Route path="/remote" element={<div> 'Эта страница уже в remote находится - хоть и имеет другой домен! </div>} />
         </Routes>
+      </div>
     </BrowserRouter>
   );
 };
