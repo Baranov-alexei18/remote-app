@@ -11,7 +11,7 @@ module.exports = {
     publicPath: 'https://remote-app-roan.vercel.app/',
     clean: true,
     library: "remote_app",
-    libraryTarget: "window",
+    libraryTarget: "var",
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],

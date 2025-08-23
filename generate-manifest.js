@@ -9,7 +9,6 @@ const jsFiles = files.filter(f => f.endsWith(".js"));
 
 const manifest = {};
 jsFiles.forEach(f => {
-  manifest[f.replace(/\.[a-f0-9]{8}\.js$/, ".js")] = f;
   manifest["main.js"] = f;
 });
 
