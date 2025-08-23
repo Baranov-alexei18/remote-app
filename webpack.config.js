@@ -10,8 +10,6 @@ module.exports = {
     filename: '[name].[contenthash].js',
     publicPath: 'https://remote-app-roan.vercel.app/',
     clean: true,
-    library: "remote_app",
-    libraryTarget: "var",
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
