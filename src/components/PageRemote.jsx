@@ -1,9 +1,5 @@
 import React from "react";
 
-window.remote_app = {
-  PageRemote
-};
-
 const PageRemote = () => (
   <>
     <div>Это remote-приложение, загруженное по следующей ссылке</div>
