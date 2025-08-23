@@ -5,7 +5,7 @@ import { BrowserRouter, Routes,  Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import ErrorBoundary from "./ErrorBoundary";
 
-const LazyMenu = React.lazy(() => import("host_app/Menu"));
+// const LazyMenu = React.lazy(() => import("host_app/Menu"));
 
 const App = () => {
   // const [MenuComponent, setMenuComponent] = useState<React.ComponentType | null>(null);
@@ -29,7 +29,7 @@ const App = () => {
 
       <div style={{display: 'flex'}}>
 
-      <ErrorBoundary>
+      {/* <ErrorBoundary>
         <Suspense fallback={<div>Загрузка меню...</div>}>
           {useLazy ? LazyMenu : 'попробуем загрузить еще раз'}
         </Suspense>
@@ -39,7 +39,7 @@ const App = () => {
         <Suspense fallback={<div>Загрузка меню...</div>}>
           <LazyMenu />
         </Suspense>
-      </ErrorBoundary>
+      </ErrorBoundary> */}
 
         <Routes>
           <Route path="/" element={<RemotePage />} />
