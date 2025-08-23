@@ -10,6 +10,8 @@ module.exports = {
     filename: '[name].[contenthash].js',
     publicPath: 'https://remote-app-roan.vercel.app/',
     clean: true,
+    library: "remote_app",
+    libraryTarget: "window",
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -25,21 +27,6 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-new ModuleFederationPlugin({
-  name: "remote_app",
-  filename: "remoteEntry.js",
-  remotes: {
-    host_app: "host_app@https://host-app-xois.vercel.app/remoteEntry.js"
-  },
-  exposes: {
-    './PageRemote': './src/components/PageRemote',
-  },
-}),
-        new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-  ],
   devServer: {
     historyApiFallback: true,
     static: './dist',
