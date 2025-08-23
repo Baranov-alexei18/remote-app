@@ -44,7 +44,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<RemotePage />} />
           <Route path="/work" element={<div> WORK! </div>} />
-          <Route path="/remote" element={<div> 'Эта страница уже в remote находится - хоть и имеет другой домен! </div>} />
         </Routes>
       </div>
     </BrowserRouter>
