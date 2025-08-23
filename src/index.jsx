@@ -7,5 +7,5 @@ window.remote_app = {
   PageRemote
 };
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('rootRemote'));
 root.render(<App />);
